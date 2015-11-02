@@ -1,4 +1,4 @@
-package fhj.swengb.assignments.functional.rladstaetter
+package fhj.swengb.assignments.functional.mknaller
 
 /**
   * This is the first assignment for swengb 2015.
