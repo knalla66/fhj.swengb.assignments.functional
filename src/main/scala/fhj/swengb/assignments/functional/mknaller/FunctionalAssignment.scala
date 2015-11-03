@@ -16,15 +16,15 @@ case class FunctionalAssignment(lowerBound: Int = 1,
     * for all elements following is true:
     *
     * xs(i) < xs(i+1)
-    * xs(i) + factor == xs(i + 1) (for i > 0 and i <= 1000)
+    * xs(i) + 1 == xs(i + 1) (for i > 0 and i <= 1000)
     *
     */
-  val xs: Seq[Int] = ???
+  val xs: Seq[Int] = Seq.tabulate(upperBound)(_ + lowerBound)
 
   /**
     * provide the sum of all elements defined in xs
     */
-  val sumXs = ???
+  val sumXs = xs.reduce(_+_)
 
   /**
     * This sequence contains a list with the following elements:
@@ -39,23 +39,25 @@ case class FunctionalAssignment(lowerBound: Int = 1,
     * x(999) = lowerbound
     *
     */
-  val ys: Seq[Int] = ???
+  val ys: Seq[Int] = xs.reverse.map(x => x*factor)
 
   /**
     * this sequence contains pairs of xs and ys. the ys should
     * be in reversed order.
     */
-  val zs: Seq[(Int, Int)] = ???
+  val zs: Seq[(Int, Int)] = xs zip ys.reverse
 
   /**
     * Function should divide the second operand with the first.
     */
-  def f(ab: (Int, Int)): Int = ???
+
+  def f(ab: (Int, Int)): Int = ab._2/ab._1
 
   /**
     * apply function f defined above to all elements of zs, return the sequence
     */
-  val result: Seq[Int] = ???
+  val result: Seq[Int] = for (z <- zs) yield f(z)
+  // yield is die Rückgabe und gibt z von zs aus und das für alle in der Sequence (for)
 
 }
 
