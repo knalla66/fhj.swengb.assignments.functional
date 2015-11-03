@@ -20,7 +20,9 @@ case class FunctionalAssignment(lowerBound: Int = 1,
     *
     */
   val xs: Seq[Int] = Seq.tabulate(upperBound)(_ + lowerBound)
-
+    // erste klammer gibt die Sequence lenght an
+    // where element at each index i is computed by f(i)
+    //Seq.range(lowerBound, upperBound+1)
   /**
     * provide the sum of all elements defined in xs
     */
@@ -40,19 +42,20 @@ case class FunctionalAssignment(lowerBound: Int = 1,
     *
     */
   val ys: Seq[Int] = xs.reverse.map(x => x*factor)
-
+  // upperbound - x(n) = reverse wert von xs, diese einfach mit dem factor multiplizieren
   /**
     * this sequence contains pairs of xs and ys. the ys should
     * be in reversed order.
     */
-  val zs: Seq[(Int, Int)] = xs zip ys.reverse
+  val zs: Seq[(Int, Int)] = xs.zip(ys.reverse)
+    //xs zip ys.reverse
 
   /**
     * Function should divide the second operand with the first.
     */
 
   def f(ab: (Int, Int)): Int = ab._2/ab._1
-
+  // mit ._position wird auf den wert des Tupels zugegriffen
   /**
     * apply function f defined above to all elements of zs, return the sequence
     */
