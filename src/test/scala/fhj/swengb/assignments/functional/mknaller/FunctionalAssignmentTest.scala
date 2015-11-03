@@ -5,6 +5,7 @@ import org.junit.{Ignore, Test}
 
 import scala.language.postfixOps
 
+@Ignore
 class FunctionalAssignmentTest {
 
   val lowerBound = 1
@@ -13,7 +14,21 @@ class FunctionalAssignmentTest {
 
   val assignment0 = FunctionalAssignment(lowerBound, upperBound, factor)
 
+
   /**
+    * helper function to display the value xs
+    */
+
+  def display(assignment : FunctionalAssignment) : Unit = {
+    println(assignment.xs.mkString("[",",","]"))
+  }
+
+  @Test def showXs(): Unit = {
+    display(assignment0)
+  }
+
+
+    /**
    * this test shows that your Assignment1 contains an attribute
    * (either val, var or def) which returns a collection containing
    * 100 elements.
