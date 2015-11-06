@@ -1,5 +1,5 @@
 package fhj.swengb.assignments.functional.mknaller
-
+// Testeintrag
 /**
   * This is the first assignment for swengb 2015.
   *
