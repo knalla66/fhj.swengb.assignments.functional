@@ -19,13 +19,14 @@ class FunctionalAssignmentTest {
     * helper function to display the value xs
     */
 
+  /*
   def display(assignment : FunctionalAssignment) : Unit = {
     println(assignment.xs.mkString("[",",","]"))
   }
 
   @Test def showXs(): Unit = {
     display(assignment0)
-  }
+  } */
 
 
     /**
